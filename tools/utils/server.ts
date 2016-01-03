@@ -19,9 +19,10 @@ export function serveSPA() {
     express.static(process.cwd())
   );
 
-  server.listen(PORT, () =>
-    openResource('http://localhost:' + PORT + APP_BASE + APP_DEST)
-  );
+  server.listen(PORT, () => {
+    console.log('server is listening on port: ' + PORT);
+    openResource('http://localhost:' + PORT + APP_BASE + APP_DEST);
+  });
 }
 
 export function notifyLiveReload(e) {
